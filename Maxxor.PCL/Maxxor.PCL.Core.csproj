@@ -34,13 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <EmbeddedResource Include="MxStrings\MxErrorStrings.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>MxErrorStrings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="MxResults\Interfaces\IMxErrorCondition.cs" />
     <Compile Include="MxResults\Interfaces\IMxResult.cs" />
     <Compile Include="MxResults\MxError.cs" />
@@ -61,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MxStrings\MxErrorStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MxErrorStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

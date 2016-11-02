@@ -118,75 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Cancelled" xml:space="preserve">
-    <value>Operation cancelled</value>
-  </data>
-  <data name="DatabaseConnection" xml:space="preserve">
-    <value>Failed to connect to the local database</value>
-  </data>
-  <data name="DatabaseQuery" xml:space="preserve">
-    <value>Failed to execute database query</value>
-  </data>
-  <data name="DownloadingData" xml:space="preserve">
-    <value>Failed to download data</value>
-  </data>
-  <data name="DownloadStarted" xml:space="preserve">
-    <value>Unable to add to DownloadQueue until all downloads have completed</value>
-  </data>
-  <data name="DuplicateResults" xml:space="preserve">
-    <value>Duplicate results returned from database</value>
-  </data>
-  <data name="EmailInvalid" xml:space="preserve">
-    <value>Please enter a valid email address</value>
-  </data>
-  <data name="FileDelete" xml:space="preserve">
-    <value>Could not delete file</value>
-  </data>
-  <data name="FileExists" xml:space="preserve">
-    <value>File should not exist already</value>
-  </data>
-  <data name="FileRead" xml:space="preserve">
-    <value>Could not read file</value>
-  </data>
-  <data name="FileWrite" xml:space="preserve">
-    <value>Could not write file</value>
-  </data>
-  <data name="FolderDelete" xml:space="preserve">
-    <value>Could not delete folder</value>
-  </data>
-  <data name="FolderRead" xml:space="preserve">
-    <value>Could not read folder</value>
-  </data>
-  <data name="FolderWrite" xml:space="preserve">
-    <value>Could not write folder</value>
-  </data>
-  <data name="NotFound" xml:space="preserve">
-    <value>Failed to load entity because it does not exist</value>
-  </data>
-  <data name="Offline" xml:space="preserve">
-    <value>Cannot connect to the internet</value>
-  </data>
-  <data name="OfflineLoginFailed" xml:space="preserve">
-    <value>Failed to authenticate using offline data. Please try again or connect to the internet to login for the first time on this device. </value>
-  </data>
-  <data name="ProcessDownloadedData" xml:space="preserve">
-    <value>Failed to process downloaded data</value>
-  </data>
-  <data name="SaveEntityToDatabase" xml:space="preserve">
-    <value>Failed to save entity to the local database</value>
-  </data>
-  <data name="ServerError" xml:space="preserve">
-    <value>An error occurred on the server</value>
-  </data>
-  <data name="SomeDownloadsFailed" xml:space="preserve">
-    <value>Some Downloads failed</value>
-  </data>
-  <data name="Unspecified" xml:space="preserve">
-    <value>An error occurred</value>
-  </data>
-  <data name="UploadingData" xml:space="preserve">
-    <value>Failed to upload data</value>
+    <value>The operation was cancelled</value>
   </data>
   <data name="Crash" xml:space="preserve">
-    <value>Application stopped unexpectedly</value>
+    <value>A crash has occured</value>
+  </data>
+  <data name="Unspecified" xml:space="preserve">
+    <value>An unexpected error has occured</value>
   </data>
 </root>
