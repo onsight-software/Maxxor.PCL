@@ -1,9 +1,11 @@
-﻿using Maxxor.PCL.MxResults;
+﻿using System.Diagnostics.CodeAnalysis;
+using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Builders.Base;
 
 namespace Maxxor.PCL.Tests.Builders.MxResultBuilders
 {
 
+    [ExcludeFromCodeCoverage]
     public class MxResultBuilder : BaseMxBuilder
     {
         private bool _isSuccess;

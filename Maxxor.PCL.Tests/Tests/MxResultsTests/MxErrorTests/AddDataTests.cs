@@ -1,10 +1,11 @@
-﻿using Maxxor.PCL.Tests.Builders.MxResultBuilders;
+﻿using System.Diagnostics.CodeAnalysis;
+using Maxxor.PCL.Tests.Builders.MxResultBuilders;
 using Maxxor.PCL.Tests.Tests.Base;
 using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
 {
-    [TestFixture]
+    [TestFixture, ExcludeFromCodeCoverage]
     public class AddDataTests : BaseUnitTest
     {
         [Test]

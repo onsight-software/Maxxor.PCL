@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Builders.MxResultBuilders;
@@ -9,7 +10,7 @@ using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
 {
-    [TestFixture]
+    [TestFixture, ExcludeFromCodeCoverage]
     public class ViewModelParametersTests : BaseUnitTest
     {
 

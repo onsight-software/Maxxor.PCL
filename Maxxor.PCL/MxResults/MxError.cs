@@ -142,7 +142,7 @@ namespace Maxxor.PCL.MxResults
         #endregion
 
         #region ViewModel Data
-
+        //TODO: move to extension method in Mvx library
         /// <summary>
         /// Returns an anonymous object containing Error particulars that can be passed
         /// to an Error display ViewModel so that the user can be informed about what happened.
