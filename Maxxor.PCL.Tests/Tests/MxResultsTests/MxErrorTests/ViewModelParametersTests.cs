@@ -108,7 +108,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var result = ParseParameters(parameters);
 
             //Assert
-            Assert.That(result["description"], Is.EqualTo("Application stopped unexpectedly"));
+            Assert.That(result["description"], Is.EqualTo(MxErrorCondition.Crash.Description));
         }
 
         [Test]
