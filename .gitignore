@@ -251,3 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 Maxxor.PCL/MxStrings/MxErrorStrings.Designer.cs
+.DS_Store
+._.DS_Store
