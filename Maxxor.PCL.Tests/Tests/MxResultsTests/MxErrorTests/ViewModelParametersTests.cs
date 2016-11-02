@@ -120,6 +120,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var error3 = UpdateError2(error2);
             var sut = UpdateError3(error3);
 
+
             //Act
             var parameters = sut.ViewModelParameters;
             var result = ParseParameters(parameters);
