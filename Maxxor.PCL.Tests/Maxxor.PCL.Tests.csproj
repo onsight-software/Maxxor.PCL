@@ -64,6 +64,7 @@
     <Compile Include="Tests\MxResultsTests\MxResultTests\FailTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\OkTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\ReturnTests.cs" />
+    <Compile Include="Tests\MxResultsTests\MxResultTests\TryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
