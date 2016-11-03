@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Maxxor.PCL.MxResults;
@@ -7,6 +8,7 @@ using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxTryTests
 {
+    [TestFixture, ExcludeFromCodeCoverage]
     public class GetResultAsyncTests
     {
 

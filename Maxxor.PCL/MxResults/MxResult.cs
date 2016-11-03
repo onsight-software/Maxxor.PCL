@@ -213,6 +213,7 @@ namespace Maxxor.PCL.MxResults
 
         #endregion
 
+
     }
 
     #region ResultOfType

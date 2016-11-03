@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Tests.Base;
 using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxTryTests
 {
+    [TestFixture, ExcludeFromCodeCoverage]
     public class GetResultTests
     {
         [TestFixture]
