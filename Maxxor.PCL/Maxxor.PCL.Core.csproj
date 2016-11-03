@@ -39,6 +39,7 @@
     <Compile Include="MxResults\MxError.cs" />
     <Compile Include="MxResults\MxErrorCondition.cs" />
     <Compile Include="MxResults\MxResult.cs" />
+    <Compile Include="MxResults\MxTry.cs" />
     <Compile Include="MxStrings\MxErrorStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

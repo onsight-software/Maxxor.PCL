@@ -13,7 +13,7 @@ namespace Maxxor.PCL.MxResults
     /// way to determine if the called method achieved its intended result and proceed accordingly 
     /// - without having to try and catch exceptions everywhere. 
     /// </summary>
-    public class MxResult
+    public  class MxResult
     {
 
         #region Properties
@@ -190,101 +190,6 @@ namespace Maxxor.PCL.MxResults
             return Ok();
         }
 
-
-        #endregion
-
-        #region Try
-        /// <summary>
-        /// Wrapper around a void method that may throw an exception and return a Result instead
-        /// </summary>
-        /// <param name="sender">The class calling the method</param>
-        /// <param name="operation">Method that may thrown an exception</param>
-        /// <param name="errorCondition">ErrorCondition to label the error with if an exception is thrown</param>
-        /// <param name="methodName">Populated automatically</param>
-        /// <returns></returns>
-        public static MxResult Try(object sender, Action operation, IMxErrorCondition errorCondition = null, [CallerMemberName] string methodName = "")
-        {
-            MxResult result;
-            try
-            {
-                operation();
-                result = Ok();
-            }
-            catch (Exception exception)
-            {
-                return Fail(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
-            }
-            return result;
-        }
-        
-        /// <summary>
-        /// Wrapper around a method that takes parameters and that may throw an exception
-        /// </summary>
-        /// <param name="sender">The class calling the method</param>
-        /// <param name="operation">Method that may thrown an exception</param>
-        /// <param name="errorCondition">ErrorCondition to label the error with if an exception is thrown</param>
-        /// <param name="methodName">Populated automatically</param>
-        /// <returns></returns>
-        public static MxResult<T> Try<T>(object sender, Func<T> operation, IMxErrorCondition errorCondition = null, [CallerMemberName] string methodName = "")
-        {
-            MxResult<T> result;
-            try
-            {
-                var returnValue = operation();
-                result = Ok(returnValue);
-            }
-            catch (Exception exception)
-            {
-                return Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Wrapper around a method that returns a Task and that may throw an exception
-        /// </summary>
-        /// <param name="sender">The class calling the method</param>
-        /// <param name="operation">Method that may thrown an exception</param>
-        /// <param name="errorCondition">ErrorCondition to label the error with if an exception is thrown</param>
-        /// <param name="methodName">Populated automatically</param>
-        /// <returns></returns>
-        public static async Task<MxResult> Action(object sender, Func<Task> operation, IMxErrorCondition errorCondition = null, [CallerMemberName] string methodName = "")
-        {
-            MxResult result;
-            try
-            {
-                await operation();
-                result = Ok();
-            }
-            catch (Exception exception)
-            {
-                return Fail(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Wrapper around a method that returns a Task and has a return value and that may throw an exception
-        /// </summary>
-        /// <param name="sender">The class calling the method</param>
-        /// <param name="operation">Method that may thrown an exception</param>
-        /// <param name="errorCondition">ErrorCondition to label the error with if an exception is thrown</param>
-        /// <param name="methodName">Populated automatically</param>
-        /// <returns></returns>
-        public static async Task<MxResult<T>> Action<T>(object sender, Func<Task<T>> operation, IMxErrorCondition errorCondition = null, [CallerMemberName] string methodName = "")
-        {
-            MxResult<T> result;
-            try
-            {
-                var value = await operation();
-                result = Ok(value);
-            }
-            catch (Exception exception)
-            {
-                return Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
-            }
-            return result;
-        }
 
         #endregion
 
