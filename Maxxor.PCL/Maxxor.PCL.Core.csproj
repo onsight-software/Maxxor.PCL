@@ -34,11 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MxExceptions\MxInvalidSenderException.cs" />
     <Compile Include="MxResults\Interfaces\IMxErrorCondition.cs" />
     <Compile Include="MxResults\Interfaces\IMxResult.cs" />
     <Compile Include="MxResults\MxError.cs" />
     <Compile Include="MxResults\MxErrorCondition.cs" />
     <Compile Include="MxResults\MxResult.cs" />
+    <Compile Include="MxResults\MxTry.cs" />
     <Compile Include="MxStrings\MxErrorStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

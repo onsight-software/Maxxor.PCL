@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Tests.Base;
@@ -6,7 +7,7 @@ using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
 {
-    [TestFixture]
+    [TestFixture, ExcludeFromCodeCoverage]
     public class CreateTests : BaseUnitTest
     {
         [Test]

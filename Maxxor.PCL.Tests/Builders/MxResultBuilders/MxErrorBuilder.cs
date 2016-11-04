@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Builders.Base;
 
 namespace Maxxor.PCL.Tests.Builders.MxResultBuilders
 {
-
+    [ExcludeFromCodeCoverage]
     public class MxErrorBuilder : BaseMxBuilder
     {
         private Exception _exception;

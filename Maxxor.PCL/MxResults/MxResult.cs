@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Maxxor.PCL.MxExceptions;
 using Maxxor.PCL.MxResults.Interfaces;
 
 namespace Maxxor.PCL.MxResults
@@ -11,7 +14,7 @@ namespace Maxxor.PCL.MxResults
     /// way to determine if the called method achieved its intended result and proceed accordingly 
     /// - without having to try and catch exceptions everywhere. 
     /// </summary>
-    public class MxResult
+    public  class MxResult
     {
 
         #region Properties
@@ -133,21 +136,48 @@ namespace Maxxor.PCL.MxResults
 
         #endregion
 
+        #region Comine
 
         /// <summary>
         /// Checks all values for failures
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <param name="sender">this</param>
         /// <param name="results"></param>
-        /// <returns>List of type values if all Succeed else Fail with error updated with all failures in order received</returns>
-        public static MxResult<List<T>> Combine<T>(IEnumerable<MxResult<T>> results)
+        /// <returns>Success if all are success else fail with error updated with all failures in order received</returns>
+        public static MxResult Combine(object sender, IEnumerable<MxResult> results, [CallerMemberName] string methodName = "")
         {
+            if(sender.GetType() == typeof(MxResult))
+            {
+                throw new MxInvalidSenderException();    
+            }
+            foreach (var result in results.Where(result => result.IsFailure))
+            {
+                return Fail(typeof(MxResult), result);
+            }
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Checks all Results in the list and returns Fail the first time one returns Fail
+        /// and return a list of values if all Results succeed
+        /// </summary>
+        /// <typeparam name="T">Type of object returned by the Results in the list</typeparam>
+        /// <param name="sender">this</param>
+        /// <param name="results">List of Results of Type T</param>
+        /// <returns>List of Result values if all Succeed else Fail</returns>
+        public static MxResult<List<T>> Combine<T>(object sender, IEnumerable<MxResult<T>> results, [CallerMemberName] string methodName = "")
+        {
+            if (sender.GetType() == typeof(MxResult) || sender.GetType() == typeof(MxResult<T>))
+            {
+                throw new MxInvalidSenderException();
+            }
             List<T> values = new List<T>();
             foreach (var result in results)
             {
                 if (result.IsFailure)
                 {
-                    return Fail<List<T>>(typeof(MxResult), result);
+                    return Fail<List<T>>(sender, result);
                 }
                 values.Add(result.Value);
             }
@@ -157,32 +187,24 @@ namespace Maxxor.PCL.MxResults
         /// <summary>
         /// Checks all values for failures
         /// </summary>
+        /// <param name="sender">this</param>
         /// <param name="results"></param>
         /// <returns>Success if all are success else fail with error updated with all failures in order received</returns>
-        public static MxResult Combine(params MxResult[] results)
+        public static MxResult Combine(object sender, params MxResult[] results)
         {
+            if (sender.GetType() == typeof(MxResult) || sender.GetType() == typeof(MxResult<>))
+            {
+                throw new MxInvalidSenderException();
+            }
             foreach (var result in results.Where(result => result.IsFailure))
             {
                 return Fail(typeof(MxResult), result);
             }
-
             return Ok();
         }
 
-        /// <summary>
-        /// Checks all values for failures
-        /// </summary>
-        /// <param name="results"></param>
-        /// <returns>Success if all are success else fail with error updated with all failures in order received</returns>
-        public static MxResult Combine(IEnumerable<MxResult> results)
-        {
-            foreach (var result in results.Where(result => result.IsFailure))
-            {
-                return Fail(typeof(MxResult), result);
-            }
 
-            return Ok();
-        }
+        #endregion
 
         #region Privates
 
@@ -204,9 +226,16 @@ namespace Maxxor.PCL.MxResults
 
         #endregion
 
+
     }
+
     #region ResultOfType
 
+    /// <summary>
+    /// Used to wrap method return values so that calling methods always have a consistent 
+    /// way to determine if the called method achieved its intended result and proceed accordingly 
+    /// - without having to try and catch exceptions everywhere. 
+    /// </summary>
     public class MxResult<T> : MxResult
     {
         public T Value { get; }
@@ -217,4 +246,5 @@ namespace Maxxor.PCL.MxResults
     }
 
     #endregion
+
 }

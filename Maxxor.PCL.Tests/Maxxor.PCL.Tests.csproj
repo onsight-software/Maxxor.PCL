@@ -64,6 +64,8 @@
     <Compile Include="Tests\MxResultsTests\MxResultTests\FailTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\OkTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\ReturnTests.cs" />
+    <Compile Include="Tests\MxResultsTests\MxTryTests\GetResultAsyncTests.cs" />
+    <Compile Include="Tests\MxResultsTests\MxTryTests\GetResultTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,6 +76,7 @@
       <Name>Maxxor.PCL.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
