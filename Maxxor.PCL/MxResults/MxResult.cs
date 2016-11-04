@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Maxxor.PCL.MxExceptions;
 using Maxxor.PCL.MxResults.Interfaces;
 
 namespace Maxxor.PCL.MxResults
@@ -145,6 +146,10 @@ namespace Maxxor.PCL.MxResults
         /// <returns>Success if all are success else fail with error updated with all failures in order received</returns>
         public static MxResult Combine(object sender, IEnumerable<MxResult> results, [CallerMemberName] string methodName = "")
         {
+            if(sender.GetType() == typeof(MxResult))
+            {
+                throw new MxInvalidSenderException();    
+            }
             foreach (var result in results.Where(result => result.IsFailure))
             {
                 return Fail(typeof(MxResult), result);
@@ -163,6 +168,10 @@ namespace Maxxor.PCL.MxResults
         /// <returns>List of Result values if all Succeed else Fail</returns>
         public static MxResult<List<T>> Combine<T>(object sender, IEnumerable<MxResult<T>> results, [CallerMemberName] string methodName = "")
         {
+            if (sender.GetType() == typeof(MxResult) || sender.GetType() == typeof(MxResult<T>))
+            {
+                throw new MxInvalidSenderException();
+            }
             List<T> values = new List<T>();
             foreach (var result in results)
             {
@@ -183,6 +192,10 @@ namespace Maxxor.PCL.MxResults
         /// <returns>Success if all are success else fail with error updated with all failures in order received</returns>
         public static MxResult Combine(object sender, params MxResult[] results)
         {
+            if (sender.GetType() == typeof(MxResult) || sender.GetType() == typeof(MxResult<>))
+            {
+                throw new MxInvalidSenderException();
+            }
             foreach (var result in results.Where(result => result.IsFailure))
             {
                 return Fail(typeof(MxResult), result);

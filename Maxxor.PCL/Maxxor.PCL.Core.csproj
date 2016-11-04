@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MxExceptions\MxInvalidSenderException.cs" />
     <Compile Include="MxResults\Interfaces\IMxErrorCondition.cs" />
     <Compile Include="MxResults\Interfaces\IMxResult.cs" />
     <Compile Include="MxResults\MxError.cs" />
