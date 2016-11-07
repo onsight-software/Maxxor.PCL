@@ -60,6 +60,7 @@
     <Compile Include="Tests\MxResultsTests\MxErrorTests\SourceErrorTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxErrorTests\UpdateTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxErrorTests\ViewModelParametersTests.cs" />
+    <Compile Include="Tests\MxResultsTests\MxResultExtensionsTests\AddDataTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\CombineTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\FailTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\OkTests.cs" />
