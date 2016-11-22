@@ -226,6 +226,21 @@ namespace Maxxor.PCL.MxResults
 
         #endregion
 
+        #region ToString
+
+        public override string ToString()
+        {
+            if (IsFailure)
+            {
+                return "FAIL: " + Error;
+            }
+            else
+            {
+                return "OK";
+            }
+        }
+
+        #endregion
 
     }
 

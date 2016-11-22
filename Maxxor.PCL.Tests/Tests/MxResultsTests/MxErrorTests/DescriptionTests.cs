@@ -14,7 +14,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
         public void WHEN_Mx_ErrorStrings_contains_string_with_same_name_as_MxErrorType_SHOULD_return_that_string()
         {
             //Arrange
-            var sut = new MxErrorBuilder().With_MxErrorType(MxErrorCondition.Crash).Create();
+            var sut = new MxErrorBuilder().With_MxErrorCondition(MxErrorCondition.Crash).Create();
 
             //Act
             var result = sut.Description;

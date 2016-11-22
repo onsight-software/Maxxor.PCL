@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 using Maxxor.PCL.MxResults.Interfaces;
 
 namespace Maxxor.PCL.MxResults
@@ -156,6 +157,21 @@ namespace Maxxor.PCL.MxResults
             innerExceptionMessage = SourceError.Exception?.InnerException != null ? SourceError.Exception.InnerException.Message : "",
             errorStack = GetErrorList()
         };
+
+        #endregion
+
+        #region ToString
+
+        public override string ToString()
+        {
+            var errorString = new StringBuilder();
+            errorString.Append(ErrorCondition.Value);
+            if (SourceError.Exception != null)
+            {
+                errorString.Append(" (").Append(SourceError.Exception.Message).Append(")");
+            }
+            return errorString.ToString();
+        }
 
         #endregion
 
