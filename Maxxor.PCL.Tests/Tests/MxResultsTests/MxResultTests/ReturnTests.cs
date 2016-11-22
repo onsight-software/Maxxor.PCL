@@ -2,7 +2,6 @@
 using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Builders.MxResultBuilders;
 using Maxxor.PCL.Tests.Tests.Base;
-using Newtonsoft.Json.Serialization;
 using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
@@ -63,7 +62,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
             public void WHEN_Result_IsFailure_SHOULD_Update_and_return_Failure()
             {
                 //Arrange
-                var previousResult = new MxResultOfTypeBuilder<DiagnosticsTraceWriter>().With_Sender(new OkTests()).With_IsSuccess(false).Create();
+                var previousResult = new MxResultOfTypeBuilder<NUnitAttribute>().With_Sender(new OkTests()).With_IsSuccess(false).Create();
 
                 //Act
                 var result = MxResult.Return(this, previousResult);

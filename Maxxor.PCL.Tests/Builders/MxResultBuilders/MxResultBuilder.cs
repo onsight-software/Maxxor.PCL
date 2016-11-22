@@ -21,8 +21,10 @@ namespace Maxxor.PCL.Tests.Builders.MxResultBuilders
         public MxResult Create()
         {
             if (_isSuccess)
+            {
                 return MxResult.Ok();
-            return MxResult.Fail(_sender, _error.ErrorCondition);
+            }
+            return MxResult.Fail(_sender, _error.ErrorCondition, _error.Exception);
         }
 
         public MxResultBuilder With_IsSuccess(bool isSuccess)

@@ -13,20 +13,20 @@ namespace Maxxor.PCL.Tests.Builders.MxResultBuilders
         private readonly Dictionary<string, string> _errorData = new Dictionary<string, string>();
         private string _class = "";
         private string _method = "";
-        private MxErrorCondition _mxErrorType = MxErrorCondition.Unspecified;
+        private MxErrorCondition _mxErrorCondition = MxErrorCondition.Unspecified;
 
         public MxError Create()
         {
-            var error = MxError.Create(this, _mxErrorType, _exception);
+            var error = MxError.Create(this, _mxErrorCondition, _exception);
             error.AdditionalData = _errorData;
             if (_class != "") error.ClassName = _class;
             if (_method != "") error.MethodName = _method;
             return error;
         }
 
-        public MxErrorBuilder With_MxErrorType(MxErrorCondition mxErrorType)
+        public MxErrorBuilder With_MxErrorCondition(MxErrorCondition errorCondition)
         {
-            _mxErrorType = mxErrorType;
+            _mxErrorCondition = errorCondition;
             return this;
         }
         public MxErrorBuilder With_Exception(Exception exception)

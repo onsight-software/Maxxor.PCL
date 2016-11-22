@@ -5,7 +5,6 @@ using System.Linq;
 using Maxxor.PCL.MxResults;
 using Maxxor.PCL.Tests.Builders.MxResultBuilders;
 using Maxxor.PCL.Tests.Tests.Base;
-using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
@@ -24,7 +23,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
                 .With_Exception(exception)
                 .With_Class("SourceErrorClass")
                 .With_ErrorData("key1", "value1")
-                .With_MxErrorType(MxErrorCondition.Crash)
+                .With_MxErrorCondition(MxErrorCondition.Crash)
                 .With_Method("SourceMethodName")
                 .Create();
 
@@ -33,7 +32,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var result = ParseParameters(parameters);
 
             //Assert
-            Assert.That(result["exceptionMessage"].Substring(0,20), Is.EqualTo("Unexpected character"));
+            Assert.That(result["exceptionMessage"].Substring(0,20), Is.EqualTo("Object reference not"));
         }
         
         [Test]
@@ -43,7 +42,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var sut = new MxErrorBuilder()
                 .With_Class("SourceErrorClass")
                 .With_ErrorData("key1", "value1")
-                .With_MxErrorType(MxErrorCondition.Crash)
+                .With_MxErrorCondition(MxErrorCondition.Crash)
                 .With_Method("SourceMethodName")
                 .Create();
 
@@ -62,7 +61,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var sut = new MxErrorBuilder()
                 .With_Class("SourceErrorClass")
                 .With_ErrorData("key1", "value1")
-                .With_MxErrorType(MxErrorCondition.Crash)
+                .With_MxErrorCondition(MxErrorCondition.Crash)
                 .With_Method("SourceMethodName")
                 .Create();
 
@@ -81,7 +80,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var sut = new MxErrorBuilder()
                 .With_Class("SourceErrorClass")
                 .With_ErrorData("key1", "value1")
-                .With_MxErrorType(MxErrorCondition.Crash)
+                .With_MxErrorCondition(MxErrorCondition.Crash)
                 .With_Method("SourceMethodName")
                 .Create();
 
@@ -100,7 +99,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var sut = new MxErrorBuilder()
                 .With_Class("SourceErrorClass")
                 .With_ErrorData("key1", "value1")
-                .With_MxErrorType(MxErrorCondition.Crash)
+                .With_MxErrorCondition(MxErrorCondition.Crash)
                 .With_Method("SourceMethodName")
                 .Create();
 
@@ -156,7 +155,8 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             Exception exception = new Exception();
             try
             {
-                JsonConvert.DeserializeObject<int>("1231#$@");
+                object m = null;
+                string s = m.ToString();
             }
             catch (Exception e)
             {
