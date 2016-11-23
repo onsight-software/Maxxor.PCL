@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Maxxor.PCL.MxStrings {
+namespace Maxxor.PCL.Resources {
     using System;
     using System.Reflection;
     
@@ -40,7 +40,7 @@ namespace Maxxor.PCL.MxStrings {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Maxxor.PCL.MxStrings.MxErrorStrings", typeof(MxErrorStrings).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Maxxor.PCL.Resources.MxErrorStrings", typeof(MxErrorStrings).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Maxxor.PCL.MxExceptions;
-using Maxxor.PCL.MxResults.Interfaces;
+using Maxxor.PCL.Exceptions;
+using Maxxor.PCL.Result.Interfaces;
 
-namespace Maxxor.PCL.MxResults
+namespace Maxxor.PCL.Result
 {
     /// <summary>
     /// Used to wrap method return values so that calling methods always have a consistent 

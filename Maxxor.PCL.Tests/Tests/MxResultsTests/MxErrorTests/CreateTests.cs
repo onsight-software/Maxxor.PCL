@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
-using Maxxor.PCL.MxResults;
+using Maxxor.PCL.Result;
 using Maxxor.PCL.Tests.Tests.Base;
 using NUnit.Framework;
 

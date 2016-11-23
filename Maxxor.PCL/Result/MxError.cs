@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Maxxor.PCL.MxResults.Interfaces;
+using Maxxor.PCL.Result.Interfaces;
 
-namespace Maxxor.PCL.MxResults
+namespace Maxxor.PCL.Result
 {
     /// <summary>
     /// Holds caught exceptions and defects and passes them back with metadata up the call stack 

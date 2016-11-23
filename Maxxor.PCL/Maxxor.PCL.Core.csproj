@@ -34,23 +34,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MxExceptions\MxInvalidSenderException.cs" />
-    <Compile Include="MxResults\Interfaces\IMxErrorCondition.cs" />
-    <Compile Include="MxResults\Interfaces\IMxResult.cs" />
-    <Compile Include="MxResults\MxError.cs" />
-    <Compile Include="MxResults\MxErrorCondition.cs" />
-    <Compile Include="MxResults\MxResult.cs" />
-    <Compile Include="MxResults\MxResultExtensions.cs" />
-    <Compile Include="MxResults\MxTry.cs" />
-    <Compile Include="MxStrings\MxErrorStrings.Designer.cs">
+    <Compile Include="Exceptions\MxInvalidSenderException.cs" />
+    <Compile Include="Result\Interfaces\IMxErrorCondition.cs" />
+    <Compile Include="Result\Interfaces\IMxResult.cs" />
+    <Compile Include="Result\MxError.cs" />
+    <Compile Include="Result\MxErrorCondition.cs" />
+    <Compile Include="Result\MxResult.cs" />
+    <Compile Include="Result\MxResultExtensions.cs" />
+    <Compile Include="Result\MxTry.cs" />
+    <Compile Include="Resources\MxErrorStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MxErrorStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ValueObject\MxValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MxStrings\MxErrorStrings.resx">
+    <EmbeddedResource Include="Resources\MxErrorStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MxErrorStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>

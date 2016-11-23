@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Maxxor.PCL.MxResults;
-using Maxxor.PCL.MxStrings;
+using Maxxor.PCL.Resources;
+using Maxxor.PCL.Result;
 using Maxxor.PCL.Tests.Builders.MxResultBuilders;
 using Maxxor.PCL.Tests.Tests.Base;
 using NUnit.Framework;
