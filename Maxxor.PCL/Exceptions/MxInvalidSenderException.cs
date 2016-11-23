@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Maxxor.PCL.MxExceptions
+namespace Maxxor.PCL.Exceptions
 {
     public class MxInvalidSenderException : Exception
     {

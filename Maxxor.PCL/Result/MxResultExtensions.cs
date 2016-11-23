@@ -1,4 +1,4 @@
-﻿namespace Maxxor.PCL.MxResults
+﻿namespace Maxxor.PCL.Result
 {
     public static class MxResultExtensions
     {

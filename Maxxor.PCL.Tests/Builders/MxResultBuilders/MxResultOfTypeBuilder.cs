@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Maxxor.PCL.MxResults;
-using Maxxor.PCL.MxResults.Interfaces;
+using Maxxor.PCL.Result;
+using Maxxor.PCL.Result.Interfaces;
 using Maxxor.PCL.Tests.Builders.Base;
 
 namespace Maxxor.PCL.Tests.Builders.MxResultBuilders

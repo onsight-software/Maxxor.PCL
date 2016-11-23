@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Maxxor.PCL.MxExceptions;
-using Maxxor.PCL.MxResults;
+using Maxxor.PCL.Exceptions;
+using Maxxor.PCL.Result;
 using Maxxor.PCL.Tests.Tests.Base;
 using NUnit.Framework;
 

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Maxxor.PCL.MxResults.Interfaces;
-using static Maxxor.PCL.MxResults.MxResult;
+using Maxxor.PCL.Result.Interfaces;
 
-namespace Maxxor.PCL.MxResults
+namespace Maxxor.PCL.Result
 {
     public static class MxTry
     {
@@ -26,11 +25,11 @@ namespace Maxxor.PCL.MxResults
             try
             {
                 operation();
-                result = Ok();
+                result = MxResult.Ok();
             }
             catch (Exception exception)
             {
-                return Fail(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
+                return MxResult.Fail(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
             }
             return result;
         }
@@ -49,11 +48,11 @@ namespace Maxxor.PCL.MxResults
             try
             {
                 var returnValue = operation();
-                result = Ok(returnValue);
+                result = MxResult.Ok(returnValue);
             }
             catch (Exception exception)
             {
-                return Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
+                return MxResult.Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
             }
             return result;
         }
@@ -76,11 +75,11 @@ namespace Maxxor.PCL.MxResults
             try
             {
                 await operation();
-                result = Ok();
+                result = MxResult.Ok();
             }
             catch (Exception exception)
             {
-                return Fail(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
+                return MxResult.Fail(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
             }
             return result;
         }
@@ -99,11 +98,11 @@ namespace Maxxor.PCL.MxResults
             try
             {
                 var returnValue = await operation();
-                result = Ok(returnValue);
+                result = MxResult.Ok(returnValue);
             }
             catch (Exception exception)
             {
-                return Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
+                return MxResult.Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, exception, methodName);
             }
             return result;
         }
@@ -133,7 +132,7 @@ namespace Maxxor.PCL.MxResults
                 try
                 {
                     var returnValue = await operation();
-                    return Ok(returnValue);
+                    return MxResult.Ok(returnValue);
                 }
                 catch (Exception e)
                 {
@@ -141,7 +140,7 @@ namespace Maxxor.PCL.MxResults
                 }
                 await Task.Delay(retryDelayMs);
             }
-            var result =  Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, new AggregateException(exceptions).Flatten(), methodName);
+            var result =  MxResult.Fail<T>(sender, errorCondition ?? MxErrorCondition.Unspecified, new AggregateException(exceptions).Flatten(), methodName);
             result.Error.AddData("tries", $"Tried operation {numberOfTimesToTry} times every {retryDelayMs} milliseconds");
             return result;
         }

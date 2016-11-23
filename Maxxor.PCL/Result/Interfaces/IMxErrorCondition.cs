@@ -1,4 +1,4 @@
-﻿namespace Maxxor.PCL.MxResults.Interfaces
+﻿namespace Maxxor.PCL.Result.Interfaces
 {
     public interface IMxErrorCondition
     {

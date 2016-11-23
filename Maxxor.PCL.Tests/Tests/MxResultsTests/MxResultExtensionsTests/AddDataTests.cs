@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Maxxor.PCL.MxResults;
+using Maxxor.PCL.Result;
 using Maxxor.PCL.Tests.Builders.MxResultBuilders;
 using Maxxor.PCL.Tests.Helpers;
 using Maxxor.PCL.Tests.Tests.Base;

@@ -1,7 +1,7 @@
-﻿using Maxxor.PCL.MxResults.Interfaces;
-using Maxxor.PCL.MxStrings;
+﻿using Maxxor.PCL.Resources;
+using Maxxor.PCL.Result.Interfaces;
 
-namespace Maxxor.PCL.MxResults
+namespace Maxxor.PCL.Result
 {
     public class MxErrorCondition : IMxErrorCondition
     {

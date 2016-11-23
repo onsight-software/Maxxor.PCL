@@ -8,11 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Maxxor.PCL.MxStrings {
-    using System;
-    using System.Reflection;
-    
-    
+using System.Reflection;
+
+namespace Maxxor.PCL.Resources {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -89,3 +87,4 @@ namespace Maxxor.PCL.MxStrings {
         }
     }
 }
+
