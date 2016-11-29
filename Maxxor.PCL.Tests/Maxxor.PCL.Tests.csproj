@@ -68,6 +68,7 @@
     <Compile Include="Tests\MxResultsTests\MxResultTests\ReturnTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxTryTests\GetResultAsyncTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxTryTests\GetResultTests.cs" />
+    <Compile Include="Tests\MxValueObjectsTests\MxCurrencyTests\ConstructorTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\GetHashCodeTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\EqualsTests.cs" />
   </ItemGroup>

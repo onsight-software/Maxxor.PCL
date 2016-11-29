@@ -1,4 +1,5 @@
 ﻿using Maxxor.PCL.ValueObject;
+using Maxxor.PCL.ValueObject.Base;
 
 namespace Maxxor.PCL.Tests.TestObjects
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Maxxor.PCL.ValueObject
+namespace Maxxor.PCL.ValueObject.Base
 {
     public abstract class MxValueObject<T> : IEquatable<T> where T : MxValueObject<T>
     {

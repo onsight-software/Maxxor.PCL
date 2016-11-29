@@ -35,6 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Exceptions\MxInvalidSenderException.cs" />
+    <Compile Include="Resources\MxCurrencySymbol.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MxCurrencySymbol.resx</DependentUpon>
+    </Compile>
     <Compile Include="Result\Interfaces\IMxErrorCondition.cs" />
     <Compile Include="Result\Interfaces\IMxResult.cs" />
     <Compile Include="Result\MxError.cs" />
@@ -47,15 +52,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MxErrorStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="ValueObject\MxValueObject.cs" />
+    <Compile Include="ValueObject\Interfaces\IMxCurrency.cs" />
+    <Compile Include="ValueObject\MxCurrency.cs" />
+    <Compile Include="ValueObject\Base\MxValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\MxCurrencySymbol.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MxCurrencySymbol.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\MxErrorStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MxErrorStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
