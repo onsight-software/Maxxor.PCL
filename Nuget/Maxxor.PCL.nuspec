@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>Maxxor.PCL</id>
-    <version>0.2.0</version>
+    <version>0.0.0</version>
     <authors>maxxor</authors>
     <owners>maxxor</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <projectUrl>https://github.com/Maxxor-Business-Solutions/Maxxor.PCL/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>.NET utilities plugin</description>
-    <releaseNotes>MxCurrency</releaseNotes>
+    <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags></tags>
     <dependencies>
