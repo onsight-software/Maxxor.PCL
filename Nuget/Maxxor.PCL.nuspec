@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Maxxor.PCL</id>
-    <version>0.1.7</version>
+    <version>0.2.0</version>
     <authors>maxxor</authors>
     <owners>maxxor</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
@@ -21,6 +21,6 @@
   </metadata>
   <files>
    <!-- CORE -->
-   	<file src="..\Maxxor.PCL\bin\Release\Maxxor.PCL.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Maxxor.PCL.dll" />
+   	<file src="./Maxxor.PCL/bin/Release/Maxxor.PCL.dll" target="lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/Maxxor.PCL.dll" />
   </files>
 </package>

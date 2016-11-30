@@ -113,7 +113,11 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxTryTests
                 //Arrange
                 const string exceptionMessage = "bad things";
                 var exception = new Exception(exceptionMessage);
-                Func<Task<int>> badMethod = async () => { throw exception; };
+                Func<Task<int>> badMethod = async () =>
+                {
+                    await Task.Delay(0);
+                    throw exception;
+                };
 
                 //Act
                 var sut = await MxTry.GetResultAsync(this, badMethod);
