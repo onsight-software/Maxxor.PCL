@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxxor.PCL.Core", "Maxxor.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxxor.PCL.Tests", "Maxxor.PCL.Tests\Maxxor.PCL.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{B4E20036-6FED-41AE-9909-4E5392E684BD}"
-	ProjectSection(SolutionItems) = preProject
-		Nuget\Maxxor.PCL.nuspec = Nuget\Maxxor.PCL.nuspec
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
