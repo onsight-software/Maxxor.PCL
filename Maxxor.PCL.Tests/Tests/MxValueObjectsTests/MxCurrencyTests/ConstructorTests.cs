@@ -33,6 +33,18 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxCurrencyTests
             //Assert
             Assert.That(result.CurrencySymbol, Is.EqualTo("د.إ"));
         }
+        [Test]
+        public void SHOULD_set_CurrencySymbol_to_EmptyString_when_CurrencyCode_is_None()
+        {
+            //Arrange
+            var currencyCode = "None";
+
+            //Act
+            var result = new MxCurrency(currencyCode);
+
+            //Assert
+            Assert.That(result.CurrencySymbol, Is.EqualTo(""));
+        }
 
         [Test]
         public void IF_currency_code_is_invalid_SHOULD_set_CurrencySymbol_to_blank()

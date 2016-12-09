@@ -533,6 +533,10 @@
     <value>kr</value>
     <comment>Norway Krone</comment>
   </data>
+  <data name="None" xml:space="preserve">
+    <value />
+    <comment>Default</comment>
+  </data>
   <data name="NPR" xml:space="preserve">
     <value>रु</value>
     <comment>Nepal Rupee</comment>
