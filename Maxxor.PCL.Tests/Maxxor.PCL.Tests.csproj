@@ -51,6 +51,9 @@
     <Compile Include="TestObjects\Address.cs" />
     <Compile Include="TestObjects\ExpandedAddress.cs" />
     <Compile Include="Tests\Base\BaseUnitTest.cs" />
+    <Compile Include="Tests\ExtensionsTests\DateTimeExtensionsTests\ToUnixTimeStampTests.cs" />
+    <Compile Include="Tests\ExtensionsTests\StringExtensionsTests\ToBase64EncodedTests.cs" />
+    <Compile Include="Tests\ExtensionsTests\TimeSpanExtensionsTests\ToIntervalStringTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxErrorTests\ToStringTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxErrorTests\AddDataTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxErrorTests\CreateTests.cs" />
