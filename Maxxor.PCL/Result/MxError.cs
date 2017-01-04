@@ -48,7 +48,7 @@ namespace Maxxor.PCL.Result
         /// <param name="previousError">Error returned from called function</param>
         /// <param name="methodName">Populated automatically by Update function</param>
         /// <returns></returns>
-        public static MxError Update(object sender, MxError previousError, string methodName = "")
+        public static MxError Update(object sender, MxError previousError, [CallerMemberName] string methodName = "")
         {
             return new MxError(sender, previousError.ErrorCondition, null)
             {
