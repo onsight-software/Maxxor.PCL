@@ -19,7 +19,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxErrorTests
             var result = sut.ErrorList;
 
             //Assert
-            Assert.That(result, Is.EqualTo("ErrorListTests.()\nErrorListTests.SHOULD_convert_ErrorStack_into_newline_separated_string()\n"));
+            Assert.That(result, Is.EqualTo("ErrorListTests.SHOULD_convert_ErrorStack_into_newline_separated_string()\nErrorListTests.SHOULD_convert_ErrorStack_into_newline_separated_string()\n"));
         }
         
     }
