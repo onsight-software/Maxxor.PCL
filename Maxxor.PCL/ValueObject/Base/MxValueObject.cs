@@ -89,11 +89,19 @@ namespace Maxxor.PCL.ValueObject.Base
 
         public static bool operator ==(MxValueObject<T> x, MxValueObject<T> y)
         {
+            if ((object)x == null && (object)y == null)
+            {
+                return true;
+            }
             return x.Equals(y);
         }
 
         public static bool operator !=(MxValueObject<T> x, MxValueObject<T> y)
         {
+            if ((object)x == null && (object)y == null)
+            {
+                return false;
+            }
             return !(x == y);
         }
     }

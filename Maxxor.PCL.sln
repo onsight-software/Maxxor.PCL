@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxxor.PCL.Core", "Maxxor.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maxxor.PCL.Tests", "Maxxor.PCL.Tests\Maxxor.PCL.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maxxor.PCL", "Maxxor.PCL", "{A5AAE305-A0AC-4437-9C67-563E094448A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2579875B-D646-4221-8864-A7A8F4A56866} = {A5AAE305-A0AC-4437-9C67-563E094448A2}
+		{8EDF4429-251A-416D-BB68-93F227191BCF} = {A5AAE305-A0AC-4437-9C67-563E094448A2}
 	EndGlobalSection
 EndGlobal

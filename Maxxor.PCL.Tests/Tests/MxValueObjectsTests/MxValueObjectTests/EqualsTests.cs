@@ -209,7 +209,6 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxValueObjectTests
             Assert.That(result, Is.False);
         }
 
-
         [Test]
         public void WHEN_other_object_is_null_SHOULD_return_false()
         {
@@ -237,6 +236,37 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxValueObjectTests
 
             //Assert
             Assert.That(result, Is.False);
+        }
+
+        [Test]
+        public void WHEN_non_null_ValueObject_is_compared_with_null_SHOULD_return_true()
+        {
+            //Arrange
+            var sut = new ExpandedAddress("a", "b", "c", "d");
+
+            //Act
+            bool result = (sut == null);
+            bool notEqualsResult = (sut != null);
+
+            //Assert
+            Assert.That(result, Is.False);
+            Assert.That(notEqualsResult, Is.True);
+        }
+
+        [Test]
+        public void WHEN_null_ValueObject_is_compared_with_null_SHOULD_return_true()
+        {
+            //Arrange
+            var sut = new ExpandedAddress("a", "b", "c", "d");
+            sut = null;
+
+            //Act
+            bool equalsResult = (sut == null);
+            bool notEqualsResult = (sut != null);
+
+            //Assert
+            Assert.That(equalsResult, Is.True);
+            Assert.That(notEqualsResult, Is.False);
         }
     }
 }
