@@ -10,8 +10,8 @@ namespace Maxxor.PCL.ValueObject
 
         public MxGpsCoordinates(double latitude, double longitude)
         {
-            Latitude = latitude > -90 && latitude < 90 ? latitude : double.NaN;
-            Longitude = longitude > -180 && longitude < 180 ? longitude : double.NaN;
+            Latitude = latitude >= -90 && latitude <= 90 ? latitude : double.NaN;
+            Longitude = longitude >= -180 && longitude <= 180 ? longitude : double.NaN;
         }
 
         public bool IsValidCoordinates => !double.IsNaN(Latitude) && !double.IsNaN(Longitude);
