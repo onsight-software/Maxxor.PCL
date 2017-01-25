@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using Maxxor.PCL.ValueObject.Base;
 
 namespace Maxxor.PCL.ValueObject
@@ -18,7 +19,7 @@ namespace Maxxor.PCL.ValueObject
 
         public override string ToString()
         {
-            return Latitude + "," + Longitude;
+            return IsValidCoordinates ? Latitude.ToString(CultureInfo.InvariantCulture) + "," + Longitude.ToString(CultureInfo.InvariantCulture) : string.Empty;
         }
 
         public override bool Equals(object obj)
@@ -26,7 +27,7 @@ namespace Maxxor.PCL.ValueObject
             if (!(obj is MxGpsCoordinates))
                 return false;
 
-            const double epsilon = 0.00001;
+            const double epsilon = 0.000001; //Accuracy to roughly 10cm
             var otherLocation = (MxGpsCoordinates)obj;
             if (!IsValidCoordinates && !otherLocation.IsValidCoordinates)
                 return true;
