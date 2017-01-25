@@ -62,9 +62,11 @@
       <DependentUpon>MxErrorStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="ValueObject\Interfaces\IMxCurrency.cs" />
+    <Compile Include="ValueObject\Interfaces\IMxGpsCoordinates.cs" />
     <Compile Include="ValueObject\MxCurrency.cs" />
     <Compile Include="ValueObject\Base\MxValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObject\MxGpsCoordinates.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MxCurrencySymbol.resx">
