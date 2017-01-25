@@ -30,9 +30,11 @@ namespace Maxxor.PCL.ValueObject.Base
             foreach (var field in fields)
             {
                 var value = field.GetValue(this);
-
-                if (value != null)
-                    hashCode = hashCode * multiplier + value.GetHashCode();
+                unchecked
+                {
+                    if (value != null)
+                        hashCode = hashCode * multiplier + value.GetHashCode();
+                }
             }
 
             return hashCode;
