@@ -18,12 +18,10 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxGpsCoordinatesTests
             var location = new MxGpsCoordinates(latitude, longitude);
 
             //Act
-            var str = location.ToString();
-            var result = str.Split(',');
+            var result = location.ToString();
 
             //Assert
-            Assert.That(Math.Abs(double.Parse(result[0], CultureInfo.InvariantCulture) - latitude) < 0.0000001);
-            Assert.That(Math.Abs(double.Parse(result[1], CultureInfo.InvariantCulture) - longitude) < 0.0000001);
+            Assert.AreEqual("65.564865,33.45659", result);
         }
         [Test]
         public void WHEN_IsNOTValidCoordinates_SHOULD_return_Empty_String()
@@ -34,10 +32,10 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxGpsCoordinatesTests
             var location = new MxGpsCoordinates(latitude, longitude);
 
             //Act
-            var str = location.ToString();
+            var result = location.ToString();
 
             //Assert
-            Assert.That(string.IsNullOrEmpty(str));
+            Assert.That(string.IsNullOrEmpty(result));
         }
     }
 }
