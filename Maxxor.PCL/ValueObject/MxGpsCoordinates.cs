@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using Maxxor.PCL.ValueObject.Base;
+using Maxxor.PCL.ValueObject.Interfaces;
 
 namespace Maxxor.PCL.ValueObject
 {
-    public class MxGpsCoordinates : MxValueObject<MxGpsCoordinates>
+    public class MxGpsCoordinates : MxValueObject<MxGpsCoordinates>, IMxGpsCoordinates
     {
         public double Latitude { get; }
         public double Longitude { get; }
@@ -16,10 +17,30 @@ namespace Maxxor.PCL.ValueObject
         }
 
         public bool IsValidCoordinates => !double.IsNaN(Latitude) && !double.IsNaN(Longitude);
-
+        /// <summary>
+        /// Always uses a point decimal seperator
+        /// </summary>
+        /// <returns>string in the point-decimal format of latitude,longitude</returns>
         public override string ToString()
         {
             return IsValidCoordinates ? Latitude.ToString(CultureInfo.InvariantCulture) + "," + Longitude.ToString(CultureInfo.InvariantCulture) : string.Empty;
+        }
+        /// <summary>
+        /// Parses a string in the decimal-point format lat,long
+        /// </summary>
+        /// <param name="toParse"></param>
+        /// <returns>MxGpsCoordinates if valid string is given else null</returns>
+        public static MxGpsCoordinates TryParse(string toParse)
+        {
+            var arr = toParse?.Split(',');
+            if (arr?.Length != 2)
+                return null;
+            
+            double latitude = double.NaN;
+            double longitude = double.NaN;
+            var success = double.TryParse(arr[0], NumberStyles.Number, CultureInfo.InvariantCulture, out latitude);
+            success = success && double.TryParse(arr[1], NumberStyles.Number, CultureInfo.InvariantCulture, out longitude);
+            return success ? new MxGpsCoordinates(latitude, longitude) : null;
         }
 
         public override bool Equals(object obj)

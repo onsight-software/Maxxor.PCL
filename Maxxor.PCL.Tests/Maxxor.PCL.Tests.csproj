@@ -76,6 +76,7 @@
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\EqualsTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\GetHashCodeTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\ToStringTests.cs" />
+    <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\TryParseTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\GetHashCodeTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\EqualsTests.cs" />
   </ItemGroup>
