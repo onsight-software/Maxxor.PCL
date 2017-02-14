@@ -7,9 +7,6 @@ namespace Maxxor.PCL.ValueObject.Interfaces
     {
         IMxGpsCoordinates GpsCoordinates { get; }
         double Accuracy { get; }
-        double Altitude { get; }
-        double Heading { get; }
-        double Speed { get; }
         DateTimeOffset DateTimeOffset { get;  }
     }
 }
