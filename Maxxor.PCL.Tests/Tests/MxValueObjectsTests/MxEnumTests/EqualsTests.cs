@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Maxxor.PCL.Tests.Tests.Base;
 using Maxxor.PCL.ValueObject;
+using Maxxor.PCL.ValueObject.Base;
 using NUnit.Framework;
 
 namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
@@ -54,27 +55,18 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
         public void Different_Types_SHOULD_not_be_Equal()
         {
             //Arrange
-            var sut = TypeType.Type1;
-
             //Act
-            var result = sut == TypeType.Type2;
+            var result = TypeType.Type1 == TypeType.Type2;
 
             //Assert
             Assert.That(result, Is.False);
         }
     }
 
-    public class TypeType : MxEnum
+    public class TypeType : MxEnum<TypeType>
     {
-        public string Value { get; }
-        public override string ToString()
+        public TypeType(string name) : base(name)
         {
-            return Value;
-        }
-
-        public TypeType(string value) : base(value)
-        {
-            Value = value;
         }
 
         public static readonly TypeType Type1 = new TypeType("Type1");
