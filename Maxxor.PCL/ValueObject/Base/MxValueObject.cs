@@ -13,6 +13,10 @@ namespace Maxxor.PCL.ValueObject.Base
                 return false;
             }
 
+            if (ReferenceEquals(obj, this))
+            {
+                return true;
+            }
             var other = obj as T;
 
             return Equals(other);

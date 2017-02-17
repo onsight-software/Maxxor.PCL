@@ -10,6 +10,20 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxValueObjectTests
     [TestFixture, ExcludeFromCodeCoverage]
     public class EqualsTests : BaseUnitTest
     {
+
+        [Test]
+        public void WHEN_objects_are_idential_SHOULD_return_TRUE()
+        {
+            //Arrange
+            var sut = new Address("a", "b", "c");
+
+            //Act
+            var result = sut == sut;
+
+            //Assert
+            Assert.That(result, Is.True);
+        }
+
         [Test]
         public void WHEN_properties_are_idential_SHOULD_return_TRUE()
         {

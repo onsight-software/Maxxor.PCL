@@ -69,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueObject\MxGeolocation.cs" />
     <Compile Include="ValueObject\MxGpsCoordinates.cs" />
+    <Compile Include="ValueObject\MxEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MxCurrencySymbol.resx">
