@@ -2,16 +2,16 @@
 {
     public abstract class MxEnum<T> : MxValueObject<MxEnum<T>>
     {
-        protected readonly string TypeName;
+        protected readonly string Name;
 
-        protected MxEnum(string typeName)
+        protected MxEnum(string name)
         {
-            TypeName = typeName;
+            Name = name;
         }
 
         public override string ToString()
         {
-            return TypeName;
+            return Name;
         }
     }
 }
