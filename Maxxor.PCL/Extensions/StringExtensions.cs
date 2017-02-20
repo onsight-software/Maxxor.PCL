@@ -7,5 +7,11 @@
             var stringToEncodeBytes = System.Text.Encoding.UTF8.GetBytes(stringToEncode);
             return System.Convert.ToBase64String(stringToEncodeBytes);
         }
+        public static bool IsValidEmail(this string stringToValidate)
+        {
+            if (string.IsNullOrEmpty(stringToValidate))
+                return false;
+            return stringToValidate.Contains("@") && stringToValidate.Contains(".");
+        }
     }
 }
