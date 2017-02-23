@@ -165,6 +165,16 @@ namespace Maxxor.PCL.Collections
             return false;
         }
 
+        public void Clear()
+        {
+            lock (_allItems)
+            {
+                _allItems.Clear();
+                _head = null;
+                _tail = null;
+            }
+        }
+
         internal class LinkedListNode
         {
             public LinkedListNode Previous = null;

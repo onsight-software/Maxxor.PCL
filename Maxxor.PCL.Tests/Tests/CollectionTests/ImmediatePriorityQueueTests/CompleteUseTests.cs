@@ -13,7 +13,44 @@ namespace Maxxor.PCL.Tests.Tests.CollectionTests.ImmediatePriorityQueueTests
     [TestFixture]
     public class CompleteUseTests : BaseUnitTest
     {
+        public const int MediumSetSize = 1000;
         public const int LargeSetSize = 15000;
+
+        [Test]
+        public void WHEN_clearing_items_SHOULD_return_empty_collection()
+        {
+            //Arrange
+            var queue = new ImmediatePriorityQueue<int>();
+            for (var i = 0; i < MediumSetSize; i++)
+            {
+                queue.TryAdd(MyFixture.Create<int>());
+            }
+            //Act
+            queue.Clear();
+
+            //Assert
+            Assert.AreEqual(0, queue.Count);
+        }
+
+        [Test]
+        public void WHEN__SHOULD_add_clear_add_items()
+        {
+            //Arrange
+            var queue = new ImmediatePriorityQueue<int>();
+
+            //Act
+            for (var i = 0; i < MediumSetSize; i++)
+            {
+                queue.TryAdd(MyFixture.Create<int>());
+            }
+            queue.Clear();
+            for (var i = 0; i < MediumSetSize; i++)
+            {
+                queue.TryAdd(MyFixture.Create<int>());
+            }
+            //Assert
+            Assert.AreEqual(MediumSetSize, queue.Count);
+        }
         [Test]
         public void SHOULD_add_remove_add_item()
         {
