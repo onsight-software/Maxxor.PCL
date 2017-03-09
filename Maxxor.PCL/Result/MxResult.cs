@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -190,7 +191,7 @@ namespace Maxxor.PCL.Result
         /// <returns>Success if all are success else fail with error updated with all failures in order received</returns>
         public static MxResult Combine(object sender, params MxResult[] results)
         {
-            if (sender.GetType() == typeof(MxResult) || sender.GetType() == typeof(MxResult<>))
+            if (sender.GetType() == typeof(MxResult) || sender.GetType() == typeof(MxResult<>) || sender is ICollection)
             {
                 throw new MxInvalidSenderException();
             }

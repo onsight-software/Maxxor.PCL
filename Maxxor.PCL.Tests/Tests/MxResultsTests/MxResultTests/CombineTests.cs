@@ -169,7 +169,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
                 {
                     MxResult.Ok(1),
                     MxResult.Fail<int>(this, MxErrorCondition.Cancelled),
-                    MxResult.Fail<int>(this, MxErrorCondition.Crash)
+                    MxResult.Ok(2)
                 };
 
                 //Act
@@ -209,6 +209,26 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
                 try
                 {
                     MxResult.Combine(wrongSender, new List<MxResult<int>>());
+                }
+                catch (Exception e)
+                {
+                    expectedException = e;
+                }
+
+                //Assert
+                Assert.That(expectedException, Is.TypeOf<MxInvalidSenderException>());
+                Assert.That(expectedException.Message, Is.EqualTo("An instance of MxResult cannot be used as the sender"));
+            }
+
+            [Test]
+            public void IF_list_of_Results_is_mistakenly_included_as_only_SHOULD_throw_exception()
+            {
+                //Arrange
+                //Act
+                Exception expectedException = new Exception();
+                try
+                {
+                    MxResult.Combine(new List<MxResult<int>>());
                 }
                 catch (Exception e)
                 {
