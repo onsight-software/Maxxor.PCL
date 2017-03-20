@@ -23,6 +23,7 @@ namespace Maxxor.PCL.Result
         public static readonly MxErrorCondition Unspecified = new MxErrorCondition("Unspecified", MxErrorStrings.Unspecified);
         public static readonly MxErrorCondition Cancelled = new MxErrorCondition("Cancelled", MxErrorStrings.Cancelled);
         public static readonly MxErrorCondition Crash = new MxErrorCondition("Crash", MxErrorStrings.Crash);
+        public static readonly MxErrorCondition NotImplemented = new MxErrorCondition("NotImplemented", MxErrorStrings.Unspecified);
 
 
     }
