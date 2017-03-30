@@ -96,7 +96,7 @@ namespace Maxxor.PCL.Collections
 
         public bool TryAdd(T item)
         {
-            if (item == null || _allItems.ContainsKey(item) && _allItems[item] != null)
+            if (item == null || _allItems.ContainsKey(item))
                 return false;
 
             var newItemNode = new LinkedListNode(item);
@@ -118,7 +118,7 @@ namespace Maxxor.PCL.Collections
 
         public bool MoveToFront(T item)
         {
-            if (item == null || !_allItems.ContainsKey(item) || _allItems[item] == null)
+            if (item == null || !_allItems.ContainsKey(item))
                 return false;
 
             if (_head.Value.Equals(item)) return true;

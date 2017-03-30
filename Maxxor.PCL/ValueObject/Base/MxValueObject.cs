@@ -58,7 +58,7 @@ namespace Maxxor.PCL.ValueObject.Base
             if (t != otherType)
                 return false;
 
-            var fields = t.GetRuntimeFields();
+            var fields = GetFields();
 
             foreach (var field in fields)
             {
