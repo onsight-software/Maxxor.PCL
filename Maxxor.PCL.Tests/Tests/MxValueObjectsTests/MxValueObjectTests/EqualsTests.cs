@@ -282,5 +282,21 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxValueObjectTests
             Assert.That(equalsResult, Is.True);
             Assert.That(notEqualsResult, Is.False);
         }
+
+        [Test]
+        public void WHEN_comparing_class_hierarchy_SHOULD_compare_all_fields_in_base()
+        {
+            //Arrange
+            var sut1 = new UnexpandedAddress("a", "b", "c");
+            var sut2 = new UnexpandedAddress("x", "y", "z");
+
+            //Act
+            var equalsResult = sut1 == sut2;
+            var notEqualsResult = sut1 != sut2;
+
+            //Assert
+            Assert.That(equalsResult, Is.False);
+            Assert.That(notEqualsResult, Is.True);
+        }
     }
 }
