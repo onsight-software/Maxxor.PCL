@@ -38,6 +38,7 @@
     <Compile Include="Config\Config.cs" />
     <Compile Include="Exceptions\MxInvalidSenderException.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TimeSpanExtensions.cs" />
     <Compile Include="Resources\MxCurrencySymbol.Designer.cs">
