@@ -60,6 +60,7 @@
     <Compile Include="Tests\ExtensionsTests\DateTimeExtensionsTests\ToUnixTimeStampTests.cs" />
     <Compile Include="Tests\ExtensionsTests\ListExtensions\GetTypesTests.cs" />
     <Compile Include="Tests\ExtensionsTests\StringExtensionsTests\IsValidEmailTests.cs" />
+    <Compile Include="Tests\ExtensionsTests\StringExtensionsTests\ToInitialsTests.cs" />
     <Compile Include="Tests\ExtensionsTests\StringExtensionsTests\ToBase64EncodedTests.cs" />
     <Compile Include="Tests\ExtensionsTests\TimeSpanExtensionsTests\ToIntervalStringTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxErrorTests\ToStringTests.cs" />
