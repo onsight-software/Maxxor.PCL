@@ -80,6 +80,15 @@ namespace Maxxor.PCL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Received invalid arguments.
+        /// </summary>
+        public static string InvalidArguments {
+            get {
+                return ResourceManager.GetString("InvalidArguments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An unexpected error has occured.
         /// </summary>
         public static string Unspecified {

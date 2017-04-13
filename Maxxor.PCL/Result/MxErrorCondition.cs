@@ -1,4 +1,5 @@
-﻿using Maxxor.PCL.Resources;
+﻿using System;
+using Maxxor.PCL.Resources;
 using Maxxor.PCL.Result.Interfaces;
 
 namespace Maxxor.PCL.Result
@@ -24,7 +25,7 @@ namespace Maxxor.PCL.Result
         public static readonly MxErrorCondition Cancelled = new MxErrorCondition("Cancelled", MxErrorStrings.Cancelled);
         public static readonly MxErrorCondition Crash = new MxErrorCondition("Crash", MxErrorStrings.Crash);
         public static readonly MxErrorCondition NotImplemented = new MxErrorCondition("NotImplemented", MxErrorStrings.Unspecified);
-
+        public static readonly MxErrorCondition InvalidArguments = new MxErrorCondition("InvalidArguments", MxErrorStrings.InvalidArguments); 
 
     }
 }

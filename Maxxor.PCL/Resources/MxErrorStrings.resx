@@ -123,6 +123,9 @@
   <data name="Crash" xml:space="preserve">
     <value>A crash has occured</value>
   </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>Received invalid arguments</value>
+  </data>
   <data name="Unspecified" xml:space="preserve">
     <value>An unexpected error has occured</value>
   </data>
