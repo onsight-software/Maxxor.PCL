@@ -1,10 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Maxxor.PCL.Enum.Base;
 using Maxxor.PCL.Tests.Tests.Base;
-using Maxxor.PCL.ValueObject;
-using Maxxor.PCL.ValueObject.Base;
 using NUnit.Framework;
 
-namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
+namespace Maxxor.PCL.Tests.Tests.MxEnumTests.BaseTests
 {
     [TestFixture, ExcludeFromCodeCoverage]
     public class ToStringTests : BaseUnitTest
@@ -23,9 +22,9 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
             Assert.That(result, Is.EqualTo("FirstValue"));
         }
 
-        private class MyEnum : MxEnum
+        private class MyEnum : MxEnum<MyEnum>
         {
-            private MyEnum(string typeName) : base(typeName)
+            public MyEnum(string typeName) : base(typeName)
             {
             }
 

@@ -1,10 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Maxxor.PCL.Enum.Base;
 using Maxxor.PCL.Tests.Tests.Base;
-using Maxxor.PCL.ValueObject;
-using Maxxor.PCL.ValueObject.Base;
 using NUnit.Framework;
 
-namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
+namespace Maxxor.PCL.Tests.Tests.MxEnumTests.BaseTests
 {
     [TestFixture, ExcludeFromCodeCoverage]
     public class EqualsTests : BaseUnitTest
@@ -14,8 +13,8 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
         public void Objects_with_same_value_SHOULD_be_Equal()
         {
             //Arrange
-            var type1 = TypeType.Type1;
-            var type2 = TypeType.Type1;
+            var type1 = TestEnum1.Value1;
+            var type2 = TestEnum1.Value1;
 
             //Act
             var result = type1 == type2;
@@ -28,8 +27,8 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
         public void Objects_with_different_values_SHOULD_not_be_Equal()
         {
             //Arrange
-            var type1 = TypeType.Type1;
-            var type2 = TypeType.Type2;
+            var type1 = TestEnum1.Value1;
+            var type2 = TestEnum1.Value2;
 
             //Act
             var result = type1 == type2;
@@ -42,7 +41,7 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
         public void Identical_objects_SHOULD_be_Equal()
         {
             //Arrange
-            var sut = TypeType.Type1;
+            var sut = TestEnum1.Value1;
 
             //Act
             var result = sut == sut;
@@ -52,25 +51,36 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxEnumTests
         }
 
         [Test]
-        public void Different_Types_SHOULD_not_be_Equal()
+        public void Different_Values_SHOULD_not_be_Equal()
         {
             //Arrange
             //Act
-            var result = TypeType.Type1 == TypeType.Type2;
+            var result = TestEnum1.Value1 == TestEnum1.Value2;
 
             //Assert
             Assert.That(result, Is.False);
         }
+        
     }
 
-    public class TypeType : MxEnum
+    public class TestEnum1 : MxEnum<TestEnum1>
     {
-        public TypeType(string name) : base(name)
+        public TestEnum1(string name) : base(name)
         {
         }
 
-        public static readonly TypeType Type1 = new TypeType("Type1");
-        public static readonly TypeType Type2 = new TypeType("Type2");
+        public static readonly TestEnum1 Value1 = new TestEnum1(nameof(Value1));
+        public static readonly TestEnum1 Value2 = new TestEnum1(nameof(Value2));
+    }
+
+    public class TestEnum2 : MxEnum<TestEnum2>
+    {
+        public TestEnum2(string name) : base(name)
+        {
+        }
+
+        public static readonly TestEnum2 Value1 = new TestEnum2(nameof(Value1));
+        public static readonly TestEnum2 Value2 = new TestEnum2(nameof(Value2));
     }
 
 
