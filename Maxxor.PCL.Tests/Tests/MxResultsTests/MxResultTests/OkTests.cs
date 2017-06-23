@@ -23,7 +23,6 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
                 Assert.That(result.IsSuccess);
             }
 
-
             [Test]
             public void SHOULD_set_IsFailure_false()
             {

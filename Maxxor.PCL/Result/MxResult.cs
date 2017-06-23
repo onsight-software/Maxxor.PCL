@@ -34,6 +34,8 @@ namespace Maxxor.PCL.Result
         /// </summary>
         public MxError Error { get; }
 
+        public string SuccessMessage { get; protected set; } = string.Empty;
+
         #endregion
 
         #region Ok
@@ -56,7 +58,18 @@ namespace Maxxor.PCL.Result
         }
 
         #endregion
-        
+
+        #region WithSuccessMessage
+
+        public MxResult WithSuccessMessage(string successMessage)
+        {
+            SuccessMessage = successMessage;
+            return this;
+        }
+
+        #endregion
+
+
         #region Fail
 
         /// <summary>
@@ -257,6 +270,16 @@ namespace Maxxor.PCL.Result
         {
             Value = value;
         }
+
+        #region WithSuccessMessage
+
+        public new MxResult<T> WithSuccessMessage(string successMessage)
+        {
+            SuccessMessage = successMessage;
+            return this;
+        }
+
+        #endregion
     }
 
     #endregion
