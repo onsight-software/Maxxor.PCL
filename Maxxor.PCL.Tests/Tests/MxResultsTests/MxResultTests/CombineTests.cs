@@ -17,7 +17,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
         public class ComibineList : BaseUnitTest
         {
             [Test]
-            public void SHOULD_return_Success_with_list_of_Values_for_List_of_successes()
+            public void SHOULD_return_Success_for_List_of_successes()
             {
                 //Arrange
                 var list = new List<MxResult> { MxResult.Ok(), MxResult.Ok(), MxResult.Ok() };
@@ -28,6 +28,42 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
                 //Assert
                 Assert.That(sut.IsSuccess);
                 Assert.AreEqual(typeof(MxResult), sut.GetType());
+            }
+
+            [Test]
+            public void WHEN_success_results_have_SuccessMessage_SHOULD_return_result_with_last_success()
+            {
+                //Arrange
+                var list = new List<MxResult>
+                {
+                    MxResult.Ok().WithSuccessMessage("1"),
+                    MxResult.Ok(),
+                    MxResult.Ok().WithSuccessMessage("3")
+                };
+
+                //Act
+                var sut = MxResult.Combine(this, list);
+
+                //Assert
+                Assert.That(sut.SuccessMessage, Is.EqualTo("3"));
+            }
+
+            [Test]
+            public void WHEN_success_results_DONT_have_SuccessMessage_SHOULD_return_result_with_empty_SuccessMessage()
+            {
+                //Arrange
+                var list = new List<MxResult>
+                {
+                    MxResult.Ok(),
+                    MxResult.Ok(),
+                    MxResult.Ok()
+                };
+
+                //Act
+                var sut = MxResult.Combine(this, list);
+
+                //Assert
+                Assert.That(sut.SuccessMessage, Is.EqualTo(string.Empty));
             }
 
             [Test]
@@ -52,7 +88,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
             }
 
             [Test]
-            public void SHOULD_return_Success_for_empty_list_with_empty_list()
+            public void SHOULD_return_Success_for_empty_list()
             {
                 //Arrange
                 var list = new List<MxResult>();
@@ -92,7 +128,7 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
         public class ComibineParams : BaseUnitTest
         {
             [Test]
-            public void SHOULD_return_Success_with_list_of_Values_for_List_of_successes()
+            public void SHOULD_return_Success_for_List_of_successes()
             {
                 //Act
                 var sut = MxResult.Combine(this, MxResult.Ok(), MxResult.Ok(), MxResult.Ok());
@@ -100,6 +136,32 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
                 //Assert
                 Assert.That(sut.IsSuccess);
                 Assert.AreEqual(typeof(MxResult), sut.GetType());
+            }
+
+            [Test]
+            public void WHEN_success_results_contain_SuccessMessages_SHOULD_set_last()
+            {
+                //Act
+                var sut = MxResult.Combine(this, 
+                    MxResult.Ok().WithSuccessMessage("1"), 
+                    MxResult.Ok(), 
+                    MxResult.Ok().WithSuccessMessage("3"));
+
+                //Assert
+                Assert.That(sut.SuccessMessage, Is.EqualTo("3"));
+            }
+
+            [Test]
+            public void WHEN_success_results_DONT_contain_SuccessMessages_SHOULD_set_SuccessMessage_empty()
+            {
+                //Act
+                var sut = MxResult.Combine(this,
+                    MxResult.Ok(),
+                    MxResult.Ok(),
+                    MxResult.Ok());
+
+                //Assert
+                Assert.That(sut.SuccessMessage, Is.EqualTo(string.Empty));
             }
 
             [Test]
@@ -160,7 +222,43 @@ namespace Maxxor.PCL.Tests.Tests.MxResultsTests.MxResultTests
                 Assert.AreEqual(typeof(List<int>), sut.Value.GetType());
                 Assert.That(sut.Value.SequenceEqual(new[] {1, 2, 3}));
             }
-            
+
+            [Test]
+            public void WHEN_success_results_contain_SuccessMessags_SHOULD_set_to_last()
+            {
+                //Arrange
+                var list = new List<MxResult<int>>
+                {
+                    MxResult.Ok(1).WithSuccessMessage("1"),
+                    MxResult.Ok(2),
+                    MxResult.Ok(3).WithSuccessMessage("3")
+                };
+
+                //Act
+                var sut = MxResult.Combine(this, list);
+
+                //Assert
+                Assert.That(sut.SuccessMessage, Is.EqualTo("3"));
+            }
+
+            [Test]
+            public void WHEN_success_results_DONT_contain_SuccessMessags_SHOULD_set_SuccessMessage_empty()
+            {
+                //Arrange
+                var list = new List<MxResult<int>>
+                {
+                    MxResult.Ok(1),
+                    MxResult.Ok(2),
+                    MxResult.Ok(3)
+                };
+
+                //Act
+                var sut = MxResult.Combine(this, list);
+
+                //Assert
+                Assert.That(sut.SuccessMessage, Is.EqualTo(string.Empty));
+            }
+
             [Test]
             public void SHOULD_return_Failure_with_updated_Error_for_list_containing_failure()
             {
