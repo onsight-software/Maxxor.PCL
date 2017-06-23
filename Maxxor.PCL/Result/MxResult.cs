@@ -162,12 +162,22 @@ namespace Maxxor.PCL.Result
             {
                 throw new MxInvalidSenderException();    
             }
-            foreach (var result in results.Where(result => result.IsFailure))
+
+            var successMessage = string.Empty;
+            foreach (var result in results)
             {
-                return Fail(typeof(MxResult), result);
+                if (result.IsFailure)
+                {
+                    return Fail(sender, result);
+                }
+                if (result.IsSuccess && !string.IsNullOrEmpty(result.SuccessMessage))
+                {
+                    successMessage = result.SuccessMessage;
+                }
             }
 
-            return Ok();
+            return Ok()
+                .WithSuccessMessage(successMessage);
         }
 
         /// <summary>
@@ -184,16 +194,22 @@ namespace Maxxor.PCL.Result
             {
                 throw new MxInvalidSenderException();
             }
-            List<T> values = new List<T>();
+
+            var successMessage = string.Empty;
+            var values = new List<T>();
             foreach (var result in results)
             {
                 if (result.IsFailure)
                 {
                     return Fail<List<T>>(sender, result);
                 }
+                if (!string.IsNullOrEmpty(result.SuccessMessage))
+                {
+                    successMessage = result.SuccessMessage;
+                }
                 values.Add(result.Value);
             }
-            return Ok(values);
+            return Ok(values).WithSuccessMessage(successMessage);
         }
 
         /// <summary>
@@ -208,11 +224,20 @@ namespace Maxxor.PCL.Result
             {
                 throw new MxInvalidSenderException();
             }
-            foreach (var result in results.Where(result => result.IsFailure))
+            var successMessage = string.Empty;
+            foreach (var result in results)
             {
-                return Fail(typeof(MxResult), result);
+                if (result.IsFailure)
+                {
+                    return Fail(sender, result);
+                }
+                if (!string.IsNullOrEmpty(result.SuccessMessage))
+                {
+                    successMessage = result.SuccessMessage;
+                }
             }
-            return Ok();
+            return Ok()
+                .WithSuccessMessage(successMessage);
         }
 
 
