@@ -75,6 +75,7 @@
     <Compile Include="Tests\MxResultsTests\MxResultExtensionsTests\AddDataTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\CombineTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\FailTests.cs" />
+    <Compile Include="Tests\MxResultsTests\MxResultTests\WithSuccessMessageTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\ToStringTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\OkTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxResultTests\ReturnTests.cs" />
