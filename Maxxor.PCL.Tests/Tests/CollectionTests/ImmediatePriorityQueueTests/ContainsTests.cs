@@ -9,7 +9,7 @@ namespace Maxxor.PCL.Tests.Tests.CollectionTests.ImmediatePriorityQueueTests
     [TestFixture]
     public class ContainsTests : BaseUnitTest
     {
-        public const int LargeSetSize = 20000;
+        public const int LargeSetSize = 30000;
 
         [Test]
         public void WHEN_elements_are_added_SHOULD_return_true()
@@ -36,6 +36,12 @@ namespace Maxxor.PCL.Tests.Tests.CollectionTests.ImmediatePriorityQueueTests
             //Assert
             Assert.False(queue.Contains(2));
         }
+        /// <summary>
+        /// This test runs a background thread to remove half the items and checks immediately if the last item 
+        /// to be removed is contained which it should be since the remove operation is running on a background thread
+        /// If the test fails try increading the LargeSetSize because it may just run extremely fast on your machine
+        /// </summary>
+        /// <returns></returns>
         [Test]
         public async Task WHEN_Contain_performed_on_different_thread_to_removes_SHOULD_return_true_for_some_elements()
         {
