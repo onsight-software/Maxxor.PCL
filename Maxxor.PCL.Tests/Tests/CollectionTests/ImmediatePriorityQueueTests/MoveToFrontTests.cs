@@ -54,5 +54,31 @@ namespace Maxxor.PCL.Tests.Tests.CollectionTests.ImmediatePriorityQueueTests
             Assert.False(queue.TryTake(out x));
             Assert.AreEqual(0, queue.Count);
         }
+
+        [Test]
+        public void WHEN_move_fails_SHOULD_be_able_to_move_more_items()
+        {
+            //Arrange
+            var queue = new ImmediatePriorityQueue<int>();
+            queue.TryAdd(1);
+            queue.TryAdd(2);
+            queue.TryAdd(3);
+
+            //Act
+            var failureMove = queue.MoveToFront(4);
+
+            //Assert
+            Assert.False(failureMove);
+            Assert.That(queue.MoveToFront(1));
+            Assert.That(queue.MoveToFront(2));
+            Assert.That(queue.MoveToFront(3));
+            var i = -1;
+            queue.TryTake(out i);
+            Assert.AreEqual(3, i);
+            queue.TryTake(out i);
+            Assert.AreEqual(2, i);
+            queue.TryTake(out i);
+            Assert.AreEqual(1, i);
+        }
     }
 }
