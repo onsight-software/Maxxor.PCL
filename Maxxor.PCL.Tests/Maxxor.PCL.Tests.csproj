@@ -52,6 +52,7 @@
     <Compile Include="TestObjects\ExpandedAddress.cs" />
     <Compile Include="Tests\Base\BaseUnitTest.cs" />
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\CompleteUseTests.cs" />
+    <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\ContainsTests.cs" />
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\CopyToTests.cs" />
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\EnumeratorTests.cs" />
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\MoveToFrontTests.cs" />

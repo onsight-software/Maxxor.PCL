@@ -55,6 +55,11 @@ namespace Maxxor.PCL.Collections
             return Count > 0 ? _head.Value : default(T);
         }
 
+        public bool Contains(T item)
+        {
+            return _allItems.ContainsKey(item);
+        }
+
         public int Count => _allItems.Count;
         /// <summary>
         /// Do not use
