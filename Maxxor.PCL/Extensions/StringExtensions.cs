@@ -38,5 +38,32 @@ namespace Maxxor.PCL.Extensions
             }
             return firstLetters.ToString();
         }
+
+        public static string ToSqlAlias(this string nameToAlias)
+        {
+            var alias = new StringBuilder();
+            foreach (var c in nameToAlias)
+            {
+                if (char.IsUpper(c))
+                {
+                    alias.Append(c);
+                }
+            }
+            if (alias.Length > 1)
+            {
+                alias.Length -= 1;
+            }
+            return alias.ToString().ToLowerInvariant();
+        }
+
+        public static string EscapeNetworkUri(string networkUri)
+        {
+            Uri uri;
+            if (!Uri.TryCreate(networkUri, UriKind.Absolute, out uri))
+            {
+                return string.Empty;
+            }
+            return uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped);
+        }
     }
 }
