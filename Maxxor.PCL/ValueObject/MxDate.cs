@@ -5,7 +5,7 @@ namespace Maxxor.PCL.ValueObject
 {
     public class MxDate : MxValueObject<MxDate>
     {
-        public MxDate(int day, int month, int year)
+        public MxDate(uint day, uint month, uint year)
         {
             if (day > 31)
             {
@@ -21,9 +21,9 @@ namespace Maxxor.PCL.ValueObject
             Year = year;
         }
 
-        public int Day { get; }
-        public int Month { get; }
-        public int Year { get; }
+        public uint Day { get; }
+        public uint Month { get; }
+        public uint Year { get; }
 
         public override string ToString()
         {

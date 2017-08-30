@@ -38,9 +38,9 @@ namespace Maxxor.PCL.ValueObject.MxSouthAfricanIdNumber
 
             try
             {
-                var day = int.Parse(daySubString);
-                var month = int.Parse(monthSubString);
-                var year = int.Parse(yearSubString);
+                var day = (uint) int.Parse(daySubString);
+                var month = (uint) int.Parse(monthSubString);
+                var year = (uint) int.Parse(yearSubString);
 
                 if (year > 0 && year < 11)
                 {
