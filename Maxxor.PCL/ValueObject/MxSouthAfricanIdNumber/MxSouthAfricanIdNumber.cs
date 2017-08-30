@@ -72,7 +72,7 @@ namespace Maxxor.PCL.ValueObject.MxSouthAfricanIdNumber
         private MxResult PopulateGender(string idNumberString)
         {
             var genderString = idNumberString.Substring(6, 4);
-            var genderNumber = int.Parse(genderString);
+            int.TryParse(genderString, out var genderNumber);
 
             if (genderNumber >= 0 && genderNumber < 5000)
             {
@@ -122,7 +122,7 @@ namespace Maxxor.PCL.ValueObject.MxSouthAfricanIdNumber
         private MxResult ValidateChecksum(string idNumberString)
         {
             var checksumString = idNumberString.Substring(12, 1);
-            var actualChecksum = int.Parse(checksumString);
+            int.TryParse(checksumString, out var actualChecksum);
             var expectedChecksum = GetChecksumDigit(idNumberString);
 
             if (actualChecksum == expectedChecksum)
