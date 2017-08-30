@@ -30,9 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework, Version=3.8.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.8.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Ploeh.AutoFixture, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoFixture.3.50.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
@@ -83,6 +82,9 @@
     <Compile Include="Tests\MxResultsTests\MxTryTests\GetResultAsyncTests.cs" />
     <Compile Include="Tests\MxResultsTests\MxTryTests\GetResultTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxCurrencyTests\ConstructorTests.cs" />
+    <Compile Include="Tests\MxValueObjectsTests\MxDateTests\ConstructorTests.cs" />
+    <Compile Include="Tests\MxValueObjectsTests\MxDateTests\ToStringTests.cs" />
+    <Compile Include="Tests\MxValueObjectsTests\MxDateTests\EqualsTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxEnumTests\ToStringTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\ConstructorTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\EqualsTests.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\ToStringTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxGpsCoordinatesTests\TryParseTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxEnumTests\EqualsTests.cs" />
+    <Compile Include="Tests\MxValueObjectsTests\MxSouthAfricanIdNumberTests\PopulateTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\GetHashCodeTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\EqualsTests.cs" />
   </ItemGroup>
@@ -102,6 +105,7 @@
       <Name>Maxxor.PCL.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
