@@ -74,6 +74,7 @@
     <Compile Include="ValueObject\MxGpsCoordinates.cs" />
     <Compile Include="ValueObject\Base\MxEnum.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxGender.cs" />
+    <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdCard.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdNumber.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdNumberError.cs" />
   </ItemGroup>
