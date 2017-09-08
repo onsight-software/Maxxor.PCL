@@ -76,6 +76,7 @@
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxGender.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdCard.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdNumber.cs" />
+    <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdCardError.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdNumberError.cs" />
   </ItemGroup>
   <ItemGroup>

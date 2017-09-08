@@ -80,7 +80,16 @@ namespace Maxxor.PCL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid ID Number.
+        ///   Looks up a localized string similar to Invalid ID scan.
+        /// </summary>
+        public static string IdCard_InvalidScan {
+            get {
+                return ResourceManager.GetString("IdCard_InvalidScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid ID number.
         /// </summary>
         public static string IdNumber_Invalid {
             get {

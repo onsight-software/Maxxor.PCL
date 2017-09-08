@@ -39,10 +39,7 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxSouthAfricanIdCardTests
                 //Assert
                 Assert.That(result.Error.ErrorCondition, Is.EqualTo(MxSouthAfricanIdNumberError.InvalidChecksum));
             }
-
-
         }
-
 
         [TestFixture]
         public class NameTests : PopulateTests
@@ -76,7 +73,25 @@ namespace Maxxor.PCL.Tests.Tests.MxValueObjectsTests.MxSouthAfricanIdCardTests
                 //Assert
                 Assert.That(result.Value.FirstName, Is.EqualTo("LOYISO"));
             }
+        }
 
+        [TestFixture]
+        public class InvalidDataTests : PopulateTests
+        {
+
+            [Test]
+            public void WHEN_data_is_invalid_SHOULD_fail()
+            {
+                //Arrange
+                var scannedString
+                    = "invalid";
+
+                //Act 
+                var result = new MxSouthAfricanIdCard().Populate(scannedString);
+
+                //Assert
+                Assert.That(result.Error.ErrorCondition, Is.EqualTo(MxSouthAfricanIdCardError.InvalidScan));
+            }
         }
 
     }

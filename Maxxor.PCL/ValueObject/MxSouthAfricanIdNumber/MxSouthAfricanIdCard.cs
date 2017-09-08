@@ -1,4 +1,5 @@
-﻿using Maxxor.PCL.Result;
+﻿using System;
+using Maxxor.PCL.Result;
 using Maxxor.PCL.ValueObject.Base;
 
 namespace Maxxor.PCL.ValueObject.MxSouthAfricanIdNumber
@@ -17,18 +18,27 @@ namespace Maxxor.PCL.ValueObject.MxSouthAfricanIdNumber
 
         public MxResult<MxSouthAfricanIdCard> Populate(string scannedString)
         {
-            var strings = scannedString.Split('|');
-
-            var idNumberResult = IdNumber.Populate(strings[4]);
-            if (idNumberResult.IsFailure)
+            try
             {
-                return MxResult.Fail<MxSouthAfricanIdCard>(this, idNumberResult);
+                var strings = scannedString.Split('|');
+
+                var idNumberResult = IdNumber.Populate(strings[4]);
+                if (idNumberResult.IsFailure)
+                {
+                    return MxResult.Fail<MxSouthAfricanIdCard>(this, idNumberResult);
+                }
+
+                LastName = strings[0];
+                FirstName = strings[1];
+
+                return MxResult.Ok(this);
+            }
+            catch (Exception e)
+            {
+                return MxResult.Fail<MxSouthAfricanIdCard>(this, MxSouthAfricanIdCardError.InvalidScan, e)
+                    .AddData("scannedString", scannedString);
             }
 
-            LastName = strings[0];
-            FirstName = strings[1];
-
-            return MxResult.Ok(this);
         }
     }
 }
