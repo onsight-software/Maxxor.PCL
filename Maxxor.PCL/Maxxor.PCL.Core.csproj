@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Collections\ImmediatePriorityQueue.cs" />
+    <Compile Include="Collections\IMxSparseMatrix.cs" />
     <Compile Include="Collections\MxSparseMatrix.cs" />
     <Compile Include="Config\Config.cs" />
     <Compile Include="Exceptions\MxInvalidSenderException.cs" />

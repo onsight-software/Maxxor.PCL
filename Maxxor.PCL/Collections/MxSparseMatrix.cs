@@ -2,7 +2,7 @@
 
 namespace Maxxor.PCL.Collections
 {
-    public class MxSparseMatrix<T>
+    public class MxSparseMatrix<T> : IMxSparseMatrix<T>
     {
         protected Dictionary<int, Dictionary<int, T>> Rows;
 
