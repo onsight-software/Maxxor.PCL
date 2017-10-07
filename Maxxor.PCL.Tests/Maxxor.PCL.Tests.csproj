@@ -57,6 +57,9 @@
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\MoveToFrontTests.cs" />
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\TryAddTests.cs" />
     <Compile Include="Tests\CollectionTests\ImmediatePriorityQueueTests\TryTakeTests.cs" />
+    <Compile Include="Tests\CollectionTests\SparseMatrixTests\RemoveAtTests.cs" />
+    <Compile Include="Tests\CollectionTests\SparseMatrixTests\GetAtTests.cs" />
+    <Compile Include="Tests\CollectionTests\SparseMatrixTests\SetAtTests.cs" />
     <Compile Include="Tests\ExtensionsTests\DateTimeExtensionsTests\ToUnixTimeStampTests.cs" />
     <Compile Include="Tests\ExtensionsTests\ListExtensions\GetTypesTests.cs" />
     <Compile Include="Tests\ExtensionsTests\StringExtensionsTests\IsValidEmailTests.cs" />
