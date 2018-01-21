@@ -80,6 +80,7 @@
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdNumber.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdCardError.cs" />
     <Compile Include="ValueObject\MxSouthAfricanIdNumber\MxSouthAfricanIdNumberError.cs" />
+    <Compile Include="Result\MxErrorDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MxCurrencySymbol.resx">
