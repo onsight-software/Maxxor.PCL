@@ -99,6 +99,7 @@
     <Compile Include="Tests\MxValueObjectsTests\MxSouthAfricanIdNumberTests\PopulateTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\GetHashCodeTests.cs" />
     <Compile Include="Tests\MxValueObjectsTests\MxValueObjectTests\EqualsTests.cs" />
+    <Compile Include="Tests\MxResultsTests\MxErrorTests\ErrorDetailsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

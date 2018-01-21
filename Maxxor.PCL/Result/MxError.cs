@@ -145,11 +145,7 @@ namespace Maxxor.PCL.Result
         #endregion
 
         #region ViewModel Data
-        //TODO: move to extension method in Mvx library
-        /// <summary>
-        /// Returns an anonymous object containing Error particulars that can be passed
-        /// to an Error display ViewModel so that the user can be informed about what happened.
-        /// </summary>
+        [Obsolete("Use ErrorDetails instead")]
         public object ViewModelParameters => new
         {
             ErrorCondition = ErrorCondition.ToString(),
@@ -158,6 +154,16 @@ namespace Maxxor.PCL.Result
             exceptionStackTrace = SourceError.Exception != null ? SourceError.Exception.StackTrace : "",
             innerExceptionMessage = SourceError.Exception?.InnerException != null ? SourceError.Exception.InnerException.Message : "",
             errorStack = GetErrorList()
+        };
+
+        public MxErrorDetails ErrorDetails => new MxErrorDetails
+        {
+            ErrorType = ErrorCondition.ToString(),
+            Description = Description,
+            ErrorStack = GetErrorList(),
+            ExceptionMessage = SourceError.Exception != null ? SourceError.Exception.Message : "",
+            ExceptionStackTrace = SourceError.Exception != null ? SourceError.Exception.StackTrace : "",
+            InnerExceptionMessage = SourceError.Exception?.InnerException != null ? SourceError.Exception.InnerException.Message : "",
         };
 
         #endregion
