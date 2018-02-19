@@ -101,9 +101,9 @@ namespace Maxxor.PCL.Collections
             if (item == null || _allItems.ContainsKey(item))
                 return false;
 
-            var newItemNode = new LinkedListNode(item);
             lock (_allItems)
             {
+                var newItemNode = new LinkedListNode(item);
                 if (_tail != null)
                 {
                     _tail.Next = newItemNode;
@@ -141,9 +141,9 @@ namespace Maxxor.PCL.Collections
 
         public bool TryTake(out T item)
         {
-            if (Count > 0)
+            lock (_allItems)
             {
-                lock (_allItems)
+                if (Count > 0)
                 {
                     var val = _head.Value;
                     LinkedListNode node;
@@ -162,7 +162,7 @@ namespace Maxxor.PCL.Collections
                     return true;
                 }
             }
-
+            
             item = default(T);
             return false;
         }
